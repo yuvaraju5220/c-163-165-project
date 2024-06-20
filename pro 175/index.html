@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>AR Scenery</title>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <script src="https://aframe.io/releases/1.0.1/aframe.min.js"></script>
+    <script src="https://rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+    <script src="./js/createModel.js"></script>
+    <script src="./js/markerHandler.js"></script>
+  </head>
+  <body style="margin : 0px; overflow: hidden;">
+    <!-- Add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
+    <a-scene
+      id="main-scene"
+      vr-mode-ui="enabled: false"
+      arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+      embedded
+      createmodels
+    >
+      <a-plane
+        id="message-text"
+        position="0 0 -3.2"
+        rotation="0 0 0"
+        width="20.6"
+        height="1.15"
+        color="#FFFFFF"
+        visible="false"
+      >
+        <a-entity
+          text="font:monoid;value:Base Model is required to create Scene;align:center;width:8.8;color:#c2185b;"
+        ></a-entity>
+      </a-plane>
+      <a-entity id="camera" camera position="1 0 35"></a-entity>
+    </a-scene>
+  </body>
+</html>
+
+<!--   <a-marker id="marker" type="barcode" value="0">
+    <a-entity position="0 0 -4">
+      <a-entity
+        id="base"
+        geometry="primitive: box; width: 19; height:15"
+        material="color:#795548"
+        position="0 0 0"
+        rotation="-90 0 0"
+      >
+      </a-entity>
+
+      <a-entity
+        id="road"
+        gltf-model="https://raw.githubusercontent.com/whitehatjr/three-d-models/main/model_gltf_6YmjcoM2ebx_6dQpF5pzTPc/model.gltf"
+        scale="3 3 3"
+        position="1.22957 -2.2 5.7"
+        rotation="0 -90 0"
+      ></a-entity>
+
+      <a-entity
+        id="sun"
+        gltf-model="https://raw.githubusercontent.com/whitehatjr/three-d-models/main/sun_model/sun_02.gltf"
+        scale="0.004 0.004 0.004"
+        position="-0.85193 6.42585 -3.36947"
+        rotation="0 -90 0"
+      ></a-entity>
+      <a-entity
+        id="car"
+        gltf-model="https://raw.githubusercontent.com/whitehatjr/three-d-models/main/car_model/Convertible.gltf"
+        scale="0.3 0.3 0.3"
+        position="1.5998 1.1 5.16068"
+        rotation="0 -90 0"
+      ></a-entity>
+
+      <a-entity
+        id="appartment1"
+        gltf-model="https://raw.githubusercontent.com/whitehatjr/three-d-models/main/building_2/Apartment.gltf"
+        scale="0.3 0.3 0.3"
+        position="7.44267 0.93481 -1.5"
+      ></a-entity>
+
+      <a-entity
+        id="appartment2"
+        gltf-model="https://raw.githubusercontent.com/whitehatjr/three-d-models/main/building_apartment_2/scene.gltf"
+        scale="0.005 0.005 0.005"
+        position="2.22556 0.93481 -2.1"
+      ></a-entity>
+
+      <a-entity
+        id="appartment3"
+        gltf-model="https://raw.githubusercontent.com/whitehatjr/three-d-models/main/building_2/Apartment.gltf"
+        scale="0.3 0.3 0.3"
+        position="-2.6774 0.93481 -1.5"
+      ></a-entity>
+
+      <a-entity
+        id="tree"
+        gltf-model="https://raw.githubusercontent.com/whitehatjr/three-d-models/main/tree/OakTree.gltf"
+        scale="0.2 0.2 0.2"
+        position="-6.95102 0.93481 -1.5"
+      ></a-entity>
+    </a-entity>
+  </a-marker>   -->
